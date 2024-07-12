@@ -28,6 +28,7 @@ import com.questhelper.bank.banktab.BankSlotIcons;
 import com.questhelper.collections.ItemCollections;
 import com.questhelper.panel.PanelDetails;
 import com.questhelper.questhelpers.BasicQuestHelper;
+import com.questhelper.questhelpers.ComplexStateQuestHelper;
 import com.questhelper.requirements.item.ItemRequirement;
 import com.questhelper.requirements.item.ItemRequirements;
 import com.questhelper.requirements.player.SkillRequirement;
@@ -51,7 +52,7 @@ import net.runelite.api.ObjectID;
 import net.runelite.api.Skill;
 import net.runelite.api.coords.WorldPoint;
 
-public class WhileGuthixSleeps extends BasicQuestHelper
+public class WhileGuthixSleeps extends ComplexStateQuestHelper
 {
 	//Items Required
 	ItemRequirement sapphireLantern, litSapphireLantern, airRunes, earthRunes, fireRunes, waterRunes, mindRunes, lawRunes,
@@ -61,7 +62,7 @@ public class WhileGuthixSleeps extends BasicQuestHelper
 	QuestStep talkToIvy, questPlaceholder;
 
 	@Override
-	public Map<Integer, QuestStep> loadSteps()
+	public QuestStep loadStep()
 	{
 		initializeRequirements();
 		setupSteps();
@@ -69,7 +70,7 @@ public class WhileGuthixSleeps extends BasicQuestHelper
 
 		steps.put(0, questPlaceholder);
 
-		return steps;
+		return questPlaceholder;
 	}
 
 	@Override
